@@ -1,0 +1,188 @@
+@import "../common/input.scss", "../common/btn.scss", "../common/modal.scss", "../common/alertInfo.scss";
+
+$logoBG-color:#5576aa;//logo的背景色
+$menuBG-color:#577aaf;//菜单的背景色
+$menuActive-color:#7899cb;//菜单选中的背景色
+html,
+body {
+  height: 100%;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 右侧主题内容 */
+.main {
+  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .mainHead {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 1px solid #eeeef3;
+
+    .mainHeadUL,
+    .mainHeadUL li,
+    .mainHeadUL .info-side {
+      height: 100%;
+    }
+
+    .mainHeadUL {
+      display: flex;
+    }
+
+    .headline {
+      line-height: 59px;
+
+      .app-name,
+      .app-describe {
+        height: 100%;
+        color: #393c40;
+        font-family: Microsoft YaHei;
+        font-weight: normal;
+      }
+
+      .app-name {
+        padding-left: 20px;
+        font-size: 24px;
+        letter-spacing: 6px;
+      }
+
+      .app-describe {
+        font-size: 15px;
+        letter-spacing: 4px;
+      }
+    }
+
+    .userinfo {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      .info-side {
+        display: flex;
+        align-items: center;
+
+        span {
+          font-size: 16px;
+        }
+
+        .orgTxt,
+        .roleTxt,
+        .panel-btn {
+          line-height: 59px;
+          color: #666;
+        }
+
+        .panelTxt {
+          position: relative;
+        }
+
+        .septal-line {
+          height: 30px;
+          border-left: 1px solid #ebebf2;
+          padding-left: 16px;
+          margin-left: 16px;
+        }
+
+        .panel-btn {
+          a {
+            color: #666;
+            padding: 3px;
+            cursor: pointer;
+            transition: all 300ms ease-out;
+
+            &:hover {
+              color: #3b90f2;
+            }
+          }
+        }
+
+        .panel-div {
+          min-width: 120px;
+          text-align: center;
+          display: none;
+          padding: 8px 0;
+          border-radius: 8px;
+          background: #fff;
+          box-shadow: 0 4px 24px #ccc;
+          position: absolute;
+          top: 50px;
+          z-index: 1000;
+
+          &.role-panel {
+            left: 0;
+          }
+
+          &.user-panel {
+            left: 0;
+          }
+
+          a {
+            display: block;
+            padding: 5px 12px;
+            text-align: left;
+            color: #666;
+            font-size: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #ebebf2;
+
+            &:hover,
+            &.active {
+              color: #276bce;
+            }
+          }
+        }
+      }
+    }
+
+    .j-home {
+      cursor: pointer;
+      padding: 0 14px;
+      padding-top: 10px;
+      color: white;
+      background: #666;
+      border-bottom-left-radius: 100%;
+      height: 40px;
+      position: relative;
+      width: 40px;
+      margin-left: 20px;
+
+      .fa {
+        position: absolute;
+        top: 4px;
+        font-size: 18px;
+        right: 6px;
+      }
+
+      &:hover {
+        background: lighten($color: #666, $amount: 20);
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .routerMain {
+    flex: 1;
+  }
+}
+
+/* 版本号 */
+.version {
+  padding: 2px 12px;
+  color: #fff;
+  background: #5576aa;
+  // opacity: 0.7;
+  border-radius: 10px 0 0 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}

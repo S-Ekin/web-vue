@@ -1,0 +1,32 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true, //启用对对象的扩展
+            "impliedStrict": true
+        },
+        "parser": "@typescript-eslint/parser"
+    },
+    "parser": "vue-eslint-parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "plugin:vue/recommended",
+        "standard",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "rules": {
+       // "no-console":"error",
+        "quotes":"off",
+        "indent":"off",
+        "no-non-null-assertion":"off",
+        "@typescript-eslint/no-non-null-assertion" :"off"
+    }
+    
+}

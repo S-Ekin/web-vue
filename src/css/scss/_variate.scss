@@ -1,0 +1,33 @@
+//文字颜色,文字要是要与背景的颜色成对比，要是网页的背景是白色，文字为其他颜色，要是网页有背景色，文字为白色
+$text-color:rgba(0, 0, 0, 0.65);
+$text-theme-color:#395082;
+$page-bg:white;
+$text-bg-color:white;
+//主题色,用于特定容器的颜色
+$theme-color:#72beff;
+
+//按钮颜色
+$btn-success: #5adc9c;
+$btn-disabled:#cfcfcf;
+
+//模态框
+$popup-color:white;
+
+//页面的几何大小
+$page-min-width:900px;
+$page-min-height:600px;
+
+//阴影
+$shadow:0 1px 10px 0 rgba(136, 141, 148, 0.6);
+
+//页面通用的内边距
+$page-padding:18px;
+
+//边框颜色
+$border-color: #e1e5f0;
+
+//错误
+$error:#ff6b6b;
+$warn:#f5c22b;
+$success:#1de9b6;
+$normal:#e3e3e3;

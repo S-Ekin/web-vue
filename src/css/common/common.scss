@@ -1,0 +1,287 @@
+@import "./normalize.css";
+@import "../scss/variate";
+
+body,
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+// 阴影
+.shadow {
+  box-shadow: $shadow;
+}
+
+.item-inp {
+  display: flex;
+  align-items: center;
+
+  .m-inp-tit {
+    padding-right: 16px;
+    text-align: right;
+    width: 110px;
+    min-width: 110px;
+    box-sizing: border-box;
+
+    &::after {
+      content: ":";
+      padding: 0 6px;
+    }
+  }
+
+  &.m-txt-start {
+    align-items: flex-start;
+  }
+}
+
+.g-crash-page {
+  height: 100%;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .crash-main {
+    display: flex;
+  }
+
+  .crash-logo {
+    width: 60px;
+    height: 60px;
+    //  background: url("../imgs/crash.svg") center no-repeat;
+    background-size: cover;
+  }
+
+  .crash-txt {
+    line-height: 2em;
+    padding: 16px 0;
+  }
+
+  .crash-descript {
+    padding-left: 40px;
+  }
+}
+
+//空数据
+.m-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  .empty-icon {
+    // background: url("../assert/imgs/empty.svg") center no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+  }
+
+  .empty-txt {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    padding: 8px 0;
+  }
+
+  .icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// 表格公用
+.td-left {
+  text-align: left;
+}
+
+.td-right {
+  text-align: right;
+}
+
+.td-center {
+  text-align: center;
+}
+
+// modal里的一行内容块
+$title-font-color:#707070;
+$side-font-color:#707070;
+
+.m-group {
+  .g-title {
+    font-weight: bold;
+    color: $title-font-color;
+    padding-bottom: 5px;
+  }
+
+  .g-main {
+    width: 100%;
+
+    .g-row {
+      padding-bottom: 10px;
+      display: -ms-flexbox;
+      display: -webkit-box;
+
+      .g-row-group {
+        display: flex;
+        flex-direction: column;
+        padding: 0 5px;
+
+        .g-row-side {
+          display: inline-block;
+          color: $side-font-color;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+// /******************主体常用设置微调 ******************/
+$blue-color:#577aaf;
+$green-color:#04c387;
+$red-color:#f35757;
+
+.TR { text-align: right !important; }
+.TL { text-align: left !important; }
+.pa15 { padding: 15px; }
+.pa20 { padding: 20px; }
+.fl { float: left; }
+.fr { float: right; }
+.disIn { display: inline-block; font-weight: normal; }/* 转为块元素 */
+.disBc { display: block; font-weight: normal; }/* 转为行内元素 */
+.disNo { display: none; }
+.size12 { font-size: 12px; }
+.size13 { font-size: 13px; }
+.size14 { font-size: 14px; }
+.size15 { font-size: 15px; }
+.size16 { font-size: 16px; }
+.red { color: red !important; }
+.redTxt { color: $red-color; }
+.green { color: green !important; }
+.grey-green { color: #5eb95e !important; }
+.blue { color: blue !important; }
+.blueTxt { color: $blue-color; }
+.purple { color: purple !important; }
+.purpleTxt { color: #535be9; }
+.infoTxt { color: #1bbae9; }
+.greenTxt { color: $green-color; }
+.grayTxt { color: #aaa; }
+.sky_blue { color: #00a0e9 !important; }
+.gray { color: #999 !important; }
+// *文字按钮悬浮加动画边框*/
+.operate-btn {
+  display: inline-block;
+  height: 26px;
+  padding: 2px 4px;
+
+  a {
+    display: inline-block;
+    padding: 2px 8px;
+    cursor: pointer;
+  }
+
+  .septal-line {
+    color: #ebebf2;
+  }
+
+  .ban-btn {
+    color: #999;
+    cursor: not-allowed;
+  }
+}
+
+.linefeed-btn {
+  height: 30px;
+  padding: 0;
+
+  a {
+    vertical-align: middle;
+  }
+
+  .linefeed {
+    width: 35px;
+    padding: 0;
+    font-size: 12px;
+    vertical-align: middle;
+  }
+}
+
+.border-box {
+  position: relative;
+}
+
+.border-box::before,
+.border-box::after {
+  position: absolute;
+  content: ' ';
+  width: 0;
+  height: 0;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.border-box::before {
+  top: 0;
+  left: 0;
+  // 鼠标离开后的回退效果，如果不设置回退效果，则鼠标离开后就直接很生硬的隐藏了
+  transition: border-color 0s ease-in 0.4s, width 0.1s ease-in 0.2s, height 0.1s ease-in 0.2s;
+}
+
+.border-box::after {
+  bottom: 0;
+  right: 0;
+  transition: border-color 0s ease-in 0.2s, width 0.1s ease-in 0.1s, height 0.1s ease-in;
+}
+
+.border-box:hover::before,
+.border-box:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin box-after($color) {
+  border-bottom-color: $color;
+  border-left-color: $color;
+  transition: border-color 0s ease-out 0.2s, width 0.1s ease-out 0.2s, height 0.1s ease-out 0.3s;
+}
+
+@mixin box-before($color) {
+  border-top-color: $color;
+  border-right-color: $color;
+  transition: width 0.1s ease-out, height 0.1s ease-out 0.1s;
+}
+
+.border-box:hover::after {
+  @include box-after($blue-color);
+}
+
+.border-box:hover::before {
+  @include box-before($blue-color);
+}
+
+.blueTxt.border-box:hover::after {
+  @include box-after($blue-color);
+}
+
+.blueTxt.border-box:hover::before {
+  @include box-before($blue-color);
+}
+
+.greenTxt.border-box:hover::after {
+  @include box-after($green-color);
+}
+
+.greenTxt.border-box:hover::before {
+  @include box-before($green-color);
+}
+
+.redTxt.border-box:hover::after {
+  @include box-after($red-color);
+}
+
+.redTxt.border-box:hover::before {
+  @include box-before($red-color);
+}

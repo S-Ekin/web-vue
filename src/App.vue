@@ -1,23 +1,27 @@
 <template>
   <div id="app">
-    {{ text }}
-    <Text />
+    {{ msg }}
+    <Text :a="text" />
+    <Hello />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { Vue, Options } from "vue-class-component"
 import Text from "./js/main/index.vue"
-export default defineComponent({
+import Hello from "./js/main/Hello.vue"
+class props {
+}
+@Options({
   components: {
-    Text
-  },
-  data: function () {
-    return {
-      text: "fsd动阀fsa"
-    }
+    Text,
+    Hello
   }
 })
+export default class App extends Vue.with(props) {
+  msg = "eera";
+  text = "er";
+}
 </script>
 
 <style lang="scss">

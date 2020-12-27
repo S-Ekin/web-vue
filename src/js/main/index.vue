@@ -1,16 +1,18 @@
 <template>
   <div>
-    as的发案说法
+    as的发案说法--{{ a }}
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-    data () {
-        return {
-            text: 13
-        }
-    }
-})
+import { Vue, prop } from "vue-class-component"
+
+class Props {
+  a = prop({
+    type: String
+  })
+}
+export default class Text extends Vue.with(Props) {
+
+}
 
 </script>
